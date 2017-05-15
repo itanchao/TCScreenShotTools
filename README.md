@@ -20,6 +20,29 @@ it, simply add the following line to your Podfile:
 pod "TCScreenShotTools"
 ```
 
+```swift
+ import TCScreenShotTools
+class AppDelegate{
+  func shareView(_ shareView: TrickyShareView, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage) {
+        print(withShareType)
+    }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        TCScreenShotTools.shared.enable = true
+        TCScreenShotTools.shared.handle = shareView(_:didClickShareBtn:withIcon:)
+        return true
+    }
+}
+
+```
+
+
+
+
+
+![yanshi](./演示.gif)
+
+
+
 ## Author
 
 itanchao, itanchao@gmail.com
