@@ -1,0 +1,16 @@
+PODS:
+  - TCScreenShotTools (0.1.0)
+
+DEPENDENCIES:
+  - TCScreenShotTools (from `./`)
+
+EXTERNAL SOURCES:
+  TCScreenShotTools:
+    :path: ./
+
+SPEC CHECKSUMS:
+  TCScreenShotTools: 69eff2f2934422124f1280bb6777bdb36db533d4
+
+PODFILE CHECKSUM: 85c9f7533b3b7ec5ffd03c0ef9b38946204cdccb
+
+COCOAPODS: 1.2.1

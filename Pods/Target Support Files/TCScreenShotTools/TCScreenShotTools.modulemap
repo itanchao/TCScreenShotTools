@@ -1,0 +1,6 @@
+framework module TCScreenShotTools {
+  umbrella header "TCScreenShotTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

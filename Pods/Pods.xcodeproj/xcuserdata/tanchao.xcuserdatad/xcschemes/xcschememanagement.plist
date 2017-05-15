@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-TCScreenShotToolsExample.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TCScreenShotTools-TCScreenShotTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TCScreenShotTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7CCAABECD105383D4F59A2D6A73BD93F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A370235F43C21182EC73A1012ED4B9B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F482CD3CA3A1DB05C517F68D098DCB39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
