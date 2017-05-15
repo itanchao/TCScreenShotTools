@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name             = 'TCScreenShotTools'
 s.version          = '0.1.0'
-s.summary          = '模仿膜拜单车截图分享功能'
+s.summary          = '模仿摩拜单车截图分享功能'
 s.homepage         = 'https://github.com/itanchao/TCScreenShotTools'
 # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
