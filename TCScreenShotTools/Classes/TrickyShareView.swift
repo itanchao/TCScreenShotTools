@@ -138,7 +138,7 @@ public class TrickyShareView: UIView {
         let btn = UIButton()
         btn.isHidden = true
         btn.tag = 0
-        btn.setImage(UIImage(named: "umsocial_wechat", in: Bundle(for: TrickyShareView.self), compatibleWith: nil), for: .normal)
+        btn.setImage(UIImage.tc_bundleImageNamed(name: "umsocial_wechat.png"), for: .normal)
         btn.addTarget(self, action: #selector(shareBtnClick(btn:)), for: .touchUpInside)
         return btn
     }()
@@ -146,7 +146,7 @@ public class TrickyShareView: UIView {
         let btn = UIButton()
         btn.isHidden = true
         btn.tag = 1
-        btn.setImage(UIImage(named: "umsocial_qq", in: Bundle(for: TrickyShareView.self), compatibleWith: nil), for: .normal)
+        btn.setImage(UIImage.tc_bundleImageNamed(name: "umsocial_qq.png"), for: .normal)
         btn.addTarget(self, action: #selector(shareBtnClick(btn:)), for: .touchUpInside)
         return btn
     }()
@@ -155,7 +155,7 @@ public class TrickyShareView: UIView {
         let btn = UIButton()
         btn.isHidden = true
         btn.tag = 2
-        btn.setImage(UIImage(named: "umsocial_wechat_timeline", in: Bundle(for: TrickyShareView.self), compatibleWith: nil), for: .normal)
+        btn.setImage(UIImage.tc_bundleImageNamed(name: "umsocial_wechat_timeline.png"), for: .normal)
         btn.addTarget(self, action: #selector(shareBtnClick(btn:)), for: .touchUpInside)
         return btn
     }()
@@ -163,7 +163,7 @@ public class TrickyShareView: UIView {
     lazy var wbBtn: UIButton = {
         let btn = UIButton()
         btn.tag = 3
-        btn.setImage(UIImage(named: "umsocial_sina.png", in: Bundle(for: TrickyShareView.self), compatibleWith: nil), for: .normal)
+        btn.setImage(UIImage.tc_bundleImageNamed(name: "umsocial_sina.png"), for: .normal)
         btn.addTarget(self, action: #selector(shareBtnClick(btn:)), for: .touchUpInside)
         btn.isHidden = true
         return btn
@@ -172,7 +172,7 @@ public class TrickyShareView: UIView {
     lazy var qzoneBtn: UIButton = {
         let btn = UIButton()
         btn.tag = 4
-        btn.setImage(UIImage(named: "umsocial_qzone", in: Bundle(for: TrickyShareView.self), compatibleWith: nil), for: .normal)
+        btn.setImage(UIImage.tc_bundleImageNamed(name: "umsocial_qzone.png"), for: .normal)
         btn.addTarget(self, action: #selector(shareBtnClick(btn:)), for: .touchUpInside)
         btn.isHidden = true
         return btn
@@ -206,7 +206,23 @@ public class TrickyShareView: UIView {
     }
  
 }
-
+extension Bundle{
+    static func tc_myLibraryBundle()->Bundle?{
+       return Bundle(url: Bundle.tc_myLibraryBundleURL()!)
+    }
+    static func tc_myLibraryBundleURL()->URL?{
+        let bunndle = Bundle(for: TCScreenShotTools.self)
+        return bunndle.url(forResource: "TCScreenShotTools", withExtension: "bundle")
+    }
+}
+extension UIImage{
+    static func tc_bundleImageNamed(name:String)->UIImage{
+        return tc_imageNamed(name: name, inBundle: Bundle.tc_myLibraryBundle()!)
+    }
+    static func tc_imageNamed(name:String,inBundle:Bundle)->UIImage{
+        return UIImage(named: name, in: inBundle, compatibleWith: nil)!
+    }
+}
 extension TrickyShareViewDelegate {
     public func shareView(_ shareView: TrickyShareView ,didClickShareBtn withShareType:TrickyShareType, withIcon:UIImage){}
 }
