@@ -344,7 +344,7 @@
 				DEVELOPMENT_TEAM = 3T49HA5P6P;
 				INFOPLIST_FILE = TCScreenShotToolsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cosinnet.feeling.SeeKingU;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.TCScreenShotTools-Example-org.cocoapods.demo.TCScreenShotTools-Example-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -358,7 +358,7 @@
 				DEVELOPMENT_TEAM = 3T49HA5P6P;
 				INFOPLIST_FILE = TCScreenShotToolsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cosinnet.feeling.SeeKingU;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.TCScreenShotTools-Example-org.cocoapods.demo.TCScreenShotTools-Example-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
