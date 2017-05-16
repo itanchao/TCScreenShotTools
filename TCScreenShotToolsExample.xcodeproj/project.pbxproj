@@ -14,8 +14,6 @@
 		D5157DC71EC98E540090C287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5157DC61EC98E540090C287 /* Assets.xcassets */; };
 		D5157DCA1EC98E540090C287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5157DC81EC98E540090C287 /* LaunchScreen.storyboard */; };
 		D5157DD21EC98E7D0090C287 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D5157DD11EC98E7D0090C287 /* Podfile */; };
-		D5157DD51EC9B42E0090C287 /* WechatIMG101.png in Resources */ = {isa = PBXBuildFile; fileRef = D5157DD41EC9B42E0090C287 /* WechatIMG101.png */; };
-		D5157DD71EC9B4360090C287 /* WechatIMG100.png in Resources */ = {isa = PBXBuildFile; fileRef = D5157DD61EC9B4360090C287 /* WechatIMG100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +28,6 @@
 		D5157DC91EC98E540090C287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5157DCB1EC98E540090C287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5157DD11EC98E7D0090C287 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		D5157DD41EC9B42E0090C287 /* WechatIMG101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG101.png; sourceTree = "<group>"; };
-		D5157DD61EC9B4360090C287 /* WechatIMG100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG100.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +73,6 @@
 		D5157DBE1EC98E540090C287 /* TCScreenShotToolsExample */ = {
 			isa = PBXGroup;
 			children = (
-				D5157DD61EC9B4360090C287 /* WechatIMG100.png */,
-				D5157DD41EC9B42E0090C287 /* WechatIMG101.png */,
 				D5157DBF1EC98E540090C287 /* AppDelegate.swift */,
 				D5157DC11EC98E540090C287 /* ViewController.swift */,
 				D5157DC31EC98E540090C287 /* Main.storyboard */,
@@ -163,8 +157,6 @@
 				D5157DCA1EC98E540090C287 /* LaunchScreen.storyboard in Resources */,
 				D5157DC71EC98E540090C287 /* Assets.xcassets in Resources */,
 				D5157DD21EC98E7D0090C287 /* Podfile in Resources */,
-				D5157DD71EC9B4360090C287 /* WechatIMG100.png in Resources */,
-				D5157DD51EC9B42E0090C287 /* WechatIMG101.png in Resources */,
 				D5157DC51EC98E540090C287 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

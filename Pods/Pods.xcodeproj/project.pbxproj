@@ -46,19 +46,19 @@
 		129815C54A8FC1B87921483439860599 /* TCScreenShotTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TCScreenShotTools-umbrella.h"; sourceTree = "<group>"; };
 		211B00705D16A5558E6AF9406613C188 /* Pods-TCScreenShotToolsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TCScreenShotToolsExample.release.xcconfig"; sourceTree = "<group>"; };
 		24170E82646C5727C840248373777743 /* Pods-TCScreenShotToolsExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TCScreenShotToolsExample-umbrella.h"; sourceTree = "<group>"; };
-		26CFDDF7A73E1FEFED7BFEE1A624E9F5 /* Pods-TCScreenShotToolsExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TCScreenShotToolsExample.modulemap"; sourceTree = "<group>"; };
+		26CFDDF7A73E1FEFED7BFEE1A624E9F5 /* Pods-TCScreenShotToolsExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TCScreenShotToolsExample.modulemap"; sourceTree = "<group>"; };
 		2D7E863CE0FA9942E57AD737029A8961 /* umsocial_sina.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = umsocial_sina.png; sourceTree = "<group>"; };
 		3A119F5785AB00183794E3CDDED121B6 /* TCScreenShotTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TCScreenShotTools-dummy.m"; sourceTree = "<group>"; };
-		4161BA31E514F9EA5E114FA94993E2EA /* TCScreenShotTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TCScreenShotTools.framework; path = TCScreenShotTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4161BA31E514F9EA5E114FA94993E2EA /* TCScreenShotTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TCScreenShotTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F87A3B9A0F9E1B673BA713E33115A3 /* TCScreenShotTools.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCScreenShotTools.swift; sourceTree = "<group>"; };
 		6587A85396D0D236B214142E860E13AF /* Pods-TCScreenShotToolsExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TCScreenShotToolsExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7A476FE763DF7AA6E5DFD42EE8B72439 /* Pods-TCScreenShotToolsExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TCScreenShotToolsExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7FF9289CA5BC58A5DC12FDCC43A64C17 /* umsocial_wechat_timeline.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = umsocial_wechat_timeline.png; sourceTree = "<group>"; };
-		853A36C44F35B6D6143B08686D2F533F /* TCScreenShotTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TCScreenShotTools.modulemap; sourceTree = "<group>"; };
-		87EBFD43DF41CA62E666169624D71121 /* TCScreenShotTools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TCScreenShotTools.bundle; path = TCScreenShotTools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		853A36C44F35B6D6143B08686D2F533F /* TCScreenShotTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TCScreenShotTools.modulemap; sourceTree = "<group>"; };
+		87EBFD43DF41CA62E666169624D71121 /* TCScreenShotTools.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCScreenShotTools.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A860657B85EA1D27514EB4767E140D3 /* TCScreenShotTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TCScreenShotTools.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		976686D94353C1CB9ACBAE5CF0412503 /* Pods-TCScreenShotToolsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TCScreenShotToolsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		9C072B31C07FE7CB1675BED9205A5243 /* TrickyShareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrickyShareView.swift; sourceTree = "<group>"; };
 		A1FCA572B1354B148EF4DAB42D3879A9 /* Pods-TCScreenShotToolsExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TCScreenShotToolsExample-frameworks.sh"; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		DC9B909BD44DF0C112626835F8738922 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC8A8336304894DA790D95A2B09F03B /* ResourceBundle-TCScreenShotTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TCScreenShotTools-Info.plist"; sourceTree = "<group>"; };
 		EDE251FE0FEB8FDE82BFCC42C7CF7270 /* TCScreenShotTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TCScreenShotTools-prefix.pch"; sourceTree = "<group>"; };
-		F52747875F8388AFD4AFBB451C10B4B9 /* Pods_TCScreenShotToolsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TCScreenShotToolsExample.framework; path = "Pods-TCScreenShotToolsExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F52747875F8388AFD4AFBB451C10B4B9 /* Pods_TCScreenShotToolsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TCScreenShotToolsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8084CA3EED86A7D8B90846D7B882CE /* Pods-TCScreenShotToolsExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TCScreenShotToolsExample-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +106,6 @@
 			children = (
 				664C587746D7D978F98A203A96ACD776 /* Classes */,
 			);
-			name = TCScreenShotTools;
 			path = TCScreenShotTools;
 			sourceTree = "<group>";
 		};
@@ -152,7 +151,6 @@
 			children = (
 				8CCE222AD9A9CB6DBF51F43AC4365B53 /* Assets */,
 			);
-			name = TCScreenShotTools;
 			path = TCScreenShotTools;
 			sourceTree = "<group>";
 		};
@@ -163,7 +161,6 @@
 				9C072B31C07FE7CB1675BED9205A5243 /* TrickyShareView.swift */,
 				DA3F8F5DF5ED928B3138EA6C4D0A0E1C /* TrickyTipsView.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -205,7 +202,6 @@
 				ACD855C8D14AEFFBA033BA30693B3ED5 /* umsocial_wechat.png */,
 				7FF9289CA5BC58A5DC12FDCC43A64C17 /* umsocial_wechat_timeline.png */,
 			);
-			name = Assets;
 			path = Assets;
 			sourceTree = "<group>";
 		};
@@ -332,6 +328,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					A370235F43C21182EC73A1012ED4B9B5 = {
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -567,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 976686D94353C1CB9ACBAE5CF0412503 /* Pods-TCScreenShotToolsExample.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -658,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 211B00705D16A5558E6AF9406613C188 /* Pods-TCScreenShotToolsExample.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

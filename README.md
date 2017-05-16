@@ -20,6 +20,14 @@ it, simply add the following line to your Podfile:
 pod "TCScreenShotTools"
 ```
 
+## Setting
+
+![](./setting.png)
+
+## Using
+
+
+
 ```swift
  import TCScreenShotTools
 class AppDelegate{
