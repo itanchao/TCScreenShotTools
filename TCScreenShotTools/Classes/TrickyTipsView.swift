@@ -11,7 +11,7 @@ import Photos
 let tipSViewH :CGFloat  = 70.0
 
 class TrickyTipsView: UIWindow {
-    
+    var bgWindows : [UIWindow] = []
     var shareIcon : UIImage?
     open static let shared: TrickyTipsView = {
         let instance = TrickyTipsView()
@@ -101,8 +101,7 @@ extension TrickyTipsView{
         }
         getNewPhoto { (icon) in
             if icon != nil{
-                let sv = TrickyShareView.show(icon: icon)
-                sv.delegate = TCScreenShotTools.shared
+                _ = TrickyShareView.show(icon: icon)
             }
         }
     }

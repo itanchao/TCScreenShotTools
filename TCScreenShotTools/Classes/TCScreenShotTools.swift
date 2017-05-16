@@ -8,10 +8,12 @@
 //
 
 import UIKit
+public protocol TCScreenShotToolsDelegate {
+    func screenShotTools(_tools:TCScreenShotTools, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage ,in shareView: TrickyShareView)
+}
 public class TCScreenShotTools: NSObject {
-    var bgWindows : [UIWindow] = []
-//    public var handle:ShareBtnClickHandle?
-    public var handle : ((TrickyShareView, _ didClickShareBtn: TrickyShareType, _ withIcon: UIImage) -> () )?
+    public var delegate:TCScreenShotToolsDelegate?
+    
     /// 全局唯一实例
     public static let shared: TCScreenShotTools = {
         let instance = TCScreenShotTools()
@@ -38,9 +40,12 @@ public class TCScreenShotTools: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
 }
-extension TCScreenShotTools: TrickyShareViewDelegate{
-    public func shareView(_ shareView: TrickyShareView, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage) {
-        handle?(shareView,withShareType,withIcon)
-//        self.handle?(withShareType,withIcon)
+extension TCScreenShotTools{
+    func shareView(_ shareView: TrickyShareView, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage) {
+        delegate?.screenShotTools(_tools: self, didClickShareBtn: withShareType, withIcon: withIcon, in: shareView)
     }
+}
+extension TCScreenShotToolsDelegate{
+    public func screenShotTools(_tools:TCScreenShotTools, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage ,in shareView: TrickyShareView){}
+
 }

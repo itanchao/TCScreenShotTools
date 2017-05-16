@@ -9,15 +9,16 @@
 import UIKit
 import TCScreenShotTools
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate   {
+class AppDelegate: UIResponder, UIApplicationDelegate,TCScreenShotToolsDelegate   {
 
-    var window: UIWindow?
-    func shareView(_ shareView: TrickyShareView, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage) {
+    func screenShotTools(_tools: TCScreenShotTools, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage, in shareView: TrickyShareView) {
         print(withShareType)
+        print(withIcon)
     }
+    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         TCScreenShotTools.shared.enable = true
-        TCScreenShotTools.shared.handle = shareView(_:didClickShareBtn:withIcon:)
+        TCScreenShotTools.shared.delegate = self
         return true
     }
 

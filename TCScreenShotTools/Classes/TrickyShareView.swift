@@ -15,12 +15,8 @@ public enum TrickyShareType:Int {
     case TrickyShareTypeWeibo  = 3
     case TrickyShareTypeQzone  = 4
 }
-public protocol TrickyShareViewDelegate {
-    func shareView(_ shareView: TrickyShareView ,didClickShareBtn withShareType:TrickyShareType, withIcon:UIImage)
-}
 public class TrickyShareView: UIView {
-    var delegate: TrickyShareViewDelegate?
-    static func show(icon:UIImage?) -> TrickyShareView{
+    static func show(icon:UIImage?){
         let shareView = TrickyShareView(frame: UIScreen.main.bounds)
         shareView.shareIcon = icon
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -28,7 +24,7 @@ public class TrickyShareView: UIView {
         window.backgroundColor = UIColor.black
         window.addSubview(shareView)
         window.isHidden = false
-        TCScreenShotTools.shared.bgWindows.append(window)
+        TrickyTipsView.shared.bgWindows.append(window)
         shareView.iconView.translatesAutoresizingMaskIntoConstraints = false
         let iconViewConstraints : [NSLayoutConstraint] = [
             shareView.iconView.topAnchor.constraint(equalTo: shareView.titleLabel.bottomAnchor, constant: 16),
@@ -44,7 +40,6 @@ public class TrickyShareView: UIView {
                 subv.isHidden = false
             })
         }
-        return shareView
     }
     func close() {
         //        隐藏其他控件让IconView落到截图之前的View上，形成景深视觉效果
@@ -120,7 +115,7 @@ public class TrickyShareView: UIView {
         }
     }
     func shareBtnClick(btn:UIButton) {
-        delegate?.shareView(self, didClickShareBtn : TrickyShareType.init(rawValue: btn.tag)!, withIcon: shareIcon!)
+         TCScreenShotTools.shared.shareView(self, didClickShareBtn : TrickyShareType.init(rawValue: btn.tag)!, withIcon: shareIcon!)
     }
     
     // MARK:懒加载控件
@@ -202,7 +197,7 @@ public class TrickyShareView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     deinit {
-        TCScreenShotTools.shared.bgWindows.removeLast()
+        TrickyTipsView.shared.bgWindows.removeLast()
     }
  
 }
@@ -222,7 +217,4 @@ extension UIImage{
     static func tc_imageNamed(name:String,inBundle:Bundle)->UIImage{
         return UIImage(named: name, in: inBundle, compatibleWith: nil)!
     }
-}
-extension TrickyShareViewDelegate {
-    public func shareView(_ shareView: TrickyShareView ,didClickShareBtn withShareType:TrickyShareType, withIcon:UIImage){}
 }
