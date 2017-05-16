@@ -29,18 +29,23 @@ pod "TCScreenShotTools"
 
 
 ```swift
- import TCScreenShotTools
-class AppDelegate{
-  func shareView(_ shareView: TrickyShareView, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage) {
-        print(withShareType)
-    }
+import UIKit
+import TCScreenShotTools
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate   {
+    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         TCScreenShotTools.shared.enable = true
-        TCScreenShotTools.shared.handle = shareView(_:didClickShareBtn:withIcon:)
+        TCScreenShotTools.shared.delegate = self
         return true
     }
 }
-
+ extension AppDelegate: TCScreenShotToolsDelegate{
+    func screenShotTools(_tools: TCScreenShotTools, didClickShareBtn withShareType: TrickyShareType, withIcon: UIImage, in shareView: TrickyShareView) {
+        print(withShareType)
+        print(withIcon)
+    }
+}
 ```
 
 
