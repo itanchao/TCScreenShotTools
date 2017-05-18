@@ -12,19 +12,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sv = UIStackView(arrangedSubviews: [yellowView,blueView])
-        view.addSubview(sv)
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            sv.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sv.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            sv.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-            sv.heightAnchor.constraint(equalToConstant: 200)
-            ])
-        sv.alignment = UIStackViewAlignment.fill
-        sv.spacing = 15
-        // 子视图分部方式 (枚举值)
-        sv.distribution = UIStackViewDistribution.fillEqually
+        if #available(iOS 9.0, *) {
+            let sv = UIStackView(arrangedSubviews: [yellowView,blueView])
+            view.addSubview(sv)
+            sv.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                sv.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                sv.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                sv.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+                sv.heightAnchor.constraint(equalToConstant: 200)
+                ])
+            sv.alignment = UIStackViewAlignment.fill
+            sv.spacing = 15
+            // 子视图分部方式 (枚举值)
+            sv.distribution = UIStackViewDistribution.fillEqually
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     func haha()  {

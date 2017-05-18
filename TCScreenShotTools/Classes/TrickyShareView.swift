@@ -25,13 +25,22 @@ public class TrickyShareView: UIView {
         window.isHidden = false
         TrickyTipsView.shared.bgWindows.append(window)
         shareView.iconView.translatesAutoresizingMaskIntoConstraints = false
-        let iconViewConstraints : [NSLayoutConstraint] = [
-            shareView.iconView.topAnchor.constraint(equalTo: shareView.titleLabel.bottomAnchor, constant: 16),
-            shareView.iconView.centerXAnchor.constraint(equalTo: shareView.centerXAnchor),
-            shareView.iconView.widthAnchor.constraint(equalToConstant: shareView.bounds.width*0.7),
-            shareView.iconView.heightAnchor.constraint(equalToConstant: shareView.bounds.height*0.7)
-        ]
-        NSLayoutConstraint.activate(iconViewConstraints)
+        if #available(iOS 9.0, *) {
+            let iconViewConstraints : [NSLayoutConstraint] = [
+                shareView.iconView.topAnchor.constraint(equalTo: shareView.titleLabel.bottomAnchor, constant: 16),
+                shareView.iconView.centerXAnchor.constraint(equalTo: shareView.centerXAnchor),
+                shareView.iconView.widthAnchor.constraint(equalToConstant: shareView.bounds.width*0.7),
+                shareView.iconView.heightAnchor.constraint(equalToConstant: shareView.bounds.height*0.7)
+            ]
+            NSLayoutConstraint.activate(iconViewConstraints)
+        } else {
+           shareView.addConstraints([
+                NSLayoutConstraint(item: shareView.iconView, attribute: .top, relatedBy: .equal, toItem: shareView.titleLabel, attribute: .bottom, multiplier: 1, constant: 14),
+                NSLayoutConstraint(item: shareView.iconView, attribute: .centerX, relatedBy: .equal, toItem: shareView, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item:  shareView.iconView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: shareView.bounds.width*0.7),
+                NSLayoutConstraint(item:  shareView.iconView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: shareView.bounds.width*0.7)
+                ])
+        }
         UIView.animate(withDuration: 0.2, animations: {
             shareView.layoutIfNeeded()
         }) { (stop) in
@@ -165,56 +174,105 @@ extension TrickyShareView{
     func buildUI() {
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        let titleLabelConstraints : [NSLayoutConstraint] = [
-            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: self.topAnchor, constant:70)
-        ]
-        NSLayoutConstraint.activate(titleLabelConstraints)
+        if #available(iOS 9.0, *) {
+            let titleLabelConstraints : [NSLayoutConstraint] = [
+                titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                titleLabel.bottomAnchor.constraint(equalTo: self.topAnchor, constant:70)
+            ]
+            NSLayoutConstraint.activate(titleLabelConstraints)
+        } else {
+            addConstraints([
+                NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: titleLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 70)
+            ])
+        }
         addSubview(cancelBtn)
         cancelBtn.translatesAutoresizingMaskIntoConstraints = false
-        let cancelBtnConstraints : [NSLayoutConstraint] = [
-            cancelBtn.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
-            cancelBtn.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
-        ]
-        NSLayoutConstraint.activate(cancelBtnConstraints)
+        if #available(iOS 9.0, *) {
+            let cancelBtnConstraints : [NSLayoutConstraint] = [
+                cancelBtn.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
+                cancelBtn.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30)
+            ]
+            NSLayoutConstraint.activate(cancelBtnConstraints)
+        } else {
+            addConstraints([
+                NSLayoutConstraint(item: cancelBtn, attribute: .bottom, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: cancelBtn, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -30)
+                ])
+        }
         addSubview(iconView)
         iconView.backgroundColor = UIColor.gray
         let line = UIView()
         addSubview(line)
         line.backgroundColor = tc_Color(hex: "#8b8b8b")
         line.translatesAutoresizingMaskIntoConstraints = false
-        let lineConstraints : [NSLayoutConstraint] = [
-            line.centerYAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50+bounds.height*0.7),
-            line.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
-            line.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30),
-            line.heightAnchor.constraint(equalToConstant: 1)
-        ]
-        NSLayoutConstraint.activate(lineConstraints)
+        if #available(iOS 9.0, *) {
+            let lineConstraints : [NSLayoutConstraint] = [
+                line.centerYAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 50+bounds.height*0.7),
+                line.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30),
+                line.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30),
+                line.heightAnchor.constraint(equalToConstant: 1)
+            ]
+            NSLayoutConstraint.activate(lineConstraints)
+        } else {
+            addConstraints([
+                NSLayoutConstraint(item: line, attribute: .centerY, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 50+bounds.height*0.7),
+                NSLayoutConstraint(item: line, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 30),
+                NSLayoutConstraint(item: line, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -30),
+                NSLayoutConstraint(item: line, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 1)
+                ])
+        }
         addSubview(sharetips)
         sharetips.translatesAutoresizingMaskIntoConstraints = false
-        let sharetipsConstraints : [NSLayoutConstraint] = [
-            sharetips.centerYAnchor.constraint(equalTo: line.centerYAnchor),
-            sharetips.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            sharetips.widthAnchor.constraint(equalToConstant: 80)
-        ]
-        NSLayoutConstraint.activate(sharetipsConstraints)
+        if #available(iOS 9.0, *) {
+            let sharetipsConstraints : [NSLayoutConstraint] = [
+                sharetips.centerYAnchor.constraint(equalTo: line.centerYAnchor),
+                sharetips.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                sharetips.widthAnchor.constraint(equalToConstant: 80)
+            ]
+            NSLayoutConstraint.activate(sharetipsConstraints)
+
+        } else {
+            addConstraints([
+                NSLayoutConstraint(item: sharetips, attribute: .centerY, relatedBy: .equal, toItem: line, attribute: .centerY, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: sharetips, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: sharetips, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 80),
+                
+                ])
+        }
         let btns = [wxBtn,qqBtn,pyqBtn,wbBtn,qzoneBtn]
-        let sharebottomView = UIStackView(arrangedSubviews: btns)
-        
-        addSubview(sharebottomView)
-        sharebottomView.translatesAutoresizingMaskIntoConstraints = false
         let leftMargin :CGFloat = 20
         let sharH : CGFloat = 40
-        NSLayoutConstraint.activate([
-            sharebottomView.leftAnchor.constraint(equalTo: self.leftAnchor,constant:leftMargin),
-            sharebottomView.rightAnchor.constraint(equalTo: self.rightAnchor,constant:-leftMargin),
-            sharebottomView.topAnchor.constraint(equalTo: line.bottomAnchor, constant: 20),
-            sharebottomView.heightAnchor.constraint(equalToConstant: sharH)
-            ])
-        sharebottomView.alignment = UIStackViewAlignment.fill
-        sharebottomView.spacing = (self.bounds.width - leftMargin * 2 - sharH * 5)/4
-        // 子视图分部方式 (枚举值)
-        sharebottomView.distribution = UIStackViewDistribution.fillEqually
+        let space =  (self.bounds.width - leftMargin * 2 - sharH * 5)/4
+        if #available(iOS 9.0, *) {
+            let sharebottomView = UIStackView(arrangedSubviews: btns)
+            addSubview(sharebottomView)
+            sharebottomView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                sharebottomView.leftAnchor.constraint(equalTo: self.leftAnchor,constant:leftMargin),
+                sharebottomView.rightAnchor.constraint(equalTo: self.rightAnchor,constant:-leftMargin),
+                sharebottomView.topAnchor.constraint(equalTo: line.bottomAnchor, constant: 20),
+                sharebottomView.heightAnchor.constraint(equalToConstant: sharH)
+                ])
+            sharebottomView.alignment = UIStackViewAlignment.fill
+            sharebottomView.spacing = space
+            // 子视图分部方式 (枚举值)
+            sharebottomView.distribution = UIStackViewDistribution.fillEqually
+        } else {
+            for i in 0 ... btns.count-1{
+                let btn = btns[i]
+                addSubview(btn)
+                btn.translatesAutoresizingMaskIntoConstraints = false
+                addConstraints([
+                NSLayoutConstraint(item: btn, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: leftMargin + (space+sharH) * CGFloat(i)),
+                NSLayoutConstraint(item: btn, attribute: .top, relatedBy: .equal, toItem: line, attribute: .bottom, multiplier: 1, constant: 20),
+                NSLayoutConstraint(item: btn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: sharH),
+                NSLayoutConstraint(item: btn, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: sharH)
+                    ])
+            }
+        }
+    
+
     }
 }
 // MARK: - Bundle资源工具方法

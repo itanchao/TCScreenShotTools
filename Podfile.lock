@@ -1,5 +1,5 @@
 PODS:
-  - TCScreenShotTools (0.1.0)
+  - TCScreenShotTools (1.0.0)
 
 DEPENDENCIES:
   - TCScreenShotTools (from `./`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ./
 
 SPEC CHECKSUMS:
-  TCScreenShotTools: d10540b8b876db476168dba9324c42e92507839e
+  TCScreenShotTools: 99054f0e1aeb9f1a5a3cc5aa130a66d0d0fd62e8
 
 PODFILE CHECKSUM: 85c9f7533b3b7ec5ffd03c0ef9b38946204cdccb
 

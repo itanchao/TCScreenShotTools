@@ -67,54 +67,104 @@ extension TrickyTipsView{
         self.backgroundColor = UIColor.white
         leftView.addSubview(tipLabel)
         tipLabel.translatesAutoresizingMaskIntoConstraints = false
-        let tipsLabelConstraints : [NSLayoutConstraint] = [
-            tipLabel.bottomAnchor.constraint(equalTo: leftView.centerYAnchor, constant: -10),
-            tipLabel.leftAnchor.constraint(equalTo: leftView.leftAnchor, constant: 40)
-        ]
-        NSLayoutConstraint.activate(tipsLabelConstraints)
+        if #available(iOS 9.0, *) {
+            let tipsLabelConstraints : [NSLayoutConstraint] = [
+                tipLabel.bottomAnchor.constraint(equalTo: leftView.centerYAnchor, constant: -10),
+                tipLabel.leftAnchor.constraint(equalTo: leftView.leftAnchor, constant: 40)
+            ]
+            NSLayoutConstraint.activate(tipsLabelConstraints)
+        } else {
+            leftView.addConstraints([
+                NSLayoutConstraint(item: tipLabel, attribute: .bottom, relatedBy: .equal, toItem: leftView, attribute: .centerY, multiplier: 1, constant: -10),
+                NSLayoutConstraint(item: tipLabel, attribute: .left, relatedBy: .equal, toItem: leftView, attribute: .left, multiplier: 1, constant: 40)
+                ])
+        }
+    
         leftView.addSubview(bottomTips)
         bottomTips.translatesAutoresizingMaskIntoConstraints = false
-        let bottomtipsContraints : [NSLayoutConstraint] = [
-            bottomTips.topAnchor.constraint(equalTo: leftView.centerYAnchor, constant: 10),
-            bottomTips.leftAnchor.constraint(equalTo: tipLabel.leftAnchor, constant: 0)
-        ]
-        NSLayoutConstraint.activate(bottomtipsContraints)
-        
+        if #available(iOS 9.0, *) {
+            let bottomtipsContraints : [NSLayoutConstraint] = [
+                bottomTips.topAnchor.constraint(equalTo: leftView.centerYAnchor, constant: 10),
+                bottomTips.leftAnchor.constraint(equalTo: tipLabel.leftAnchor, constant: 0)
+            ]
+            NSLayoutConstraint.activate(bottomtipsContraints)
+        } else {
+            leftView.addConstraints([
+                NSLayoutConstraint(item: bottomTips, attribute: .top, relatedBy: .equal, toItem: leftView, attribute: .centerY, multiplier: 1, constant: 10),
+                NSLayoutConstraint(item: bottomTips, attribute: .left, relatedBy: .equal, toItem: tipLabel, attribute: .left, multiplier: 1, constant: 0)
+                ])
+        }
         rightView.addSubview(shareBtn)
         shareBtn.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            shareBtn.leftAnchor.constraint(equalTo: rightView.leftAnchor),
-            shareBtn.rightAnchor.constraint(equalTo: rightView.rightAnchor),
-            shareBtn.widthAnchor.constraint(equalToConstant: tipSViewH),
-            shareBtn.heightAnchor.constraint(equalToConstant: tipSViewH)
-            ])
-//        rightView.backgroundColor = tc_Color(hex: "#ed5c4d")
-        let stackView = UIStackView(arrangedSubviews: [leftView,rightView])
-        stackView.alignment = UIStackViewAlignment.fill
-        stackView.spacing = 0
-        // 子视图分部方式 (枚举值)
-        stackView.distribution = UIStackViewDistribution.fill
-        self.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            stackView.rightAnchor.constraint(equalTo: self.rightAnchor)
-            ])
-        
+        if #available(iOS 9.0, *) {
+            NSLayoutConstraint.activate([
+                shareBtn.leftAnchor.constraint(equalTo: rightView.leftAnchor),
+                shareBtn.rightAnchor.constraint(equalTo: rightView.rightAnchor),
+                shareBtn.widthAnchor.constraint(equalToConstant: tipSViewH),
+                shareBtn.heightAnchor.constraint(equalToConstant: tipSViewH)
+                ])
+        } else {
+            rightView.addConstraints([
+                NSLayoutConstraint(item: shareBtn, attribute: .left, relatedBy: .equal, toItem: rightView, attribute: .left, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: shareBtn, attribute: .right, relatedBy: .equal, toItem: rightView, attribute: .right, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: shareBtn, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: tipSViewH),
+                NSLayoutConstraint(item: shareBtn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: tipSViewH)
+                ])
+        }
+        rightView.backgroundColor = tc_Color(hex: "#ed5c4d")
+        if #available(iOS 9.0, *) {
+            let stackView = UIStackView(arrangedSubviews: [leftView,rightView])
+            stackView.alignment = UIStackViewAlignment.fill
+            stackView.spacing = 0
+            // 子视图分部方式 (枚举值)
+            stackView.distribution = UIStackViewDistribution.fill
+            self.addSubview(stackView)
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                stackView.leftAnchor.constraint(equalTo: self.leftAnchor),
+                stackView.topAnchor.constraint(equalTo: self.topAnchor),
+                stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+                stackView.rightAnchor.constraint(equalTo: self.rightAnchor)
+                ])
+
+        } else {
+            addSubview(leftView)
+            addSubview(rightView)
+            leftView.translatesAutoresizingMaskIntoConstraints = false
+            rightView.translatesAutoresizingMaskIntoConstraints = false
+            addConstraints([
+                NSLayoutConstraint(item: leftView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: leftView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: leftView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: rightView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: rightView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: rightView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: rightView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: tipSViewH),
+                NSLayoutConstraint(item: rightView, attribute: .left, relatedBy: .equal, toItem: leftView, attribute: .right, multiplier: 1, constant: 0)
+                ])
+        }
+    
         let bottomLine = UIView()
         addSubview(bottomLine)
         bottomLine.backgroundColor = tc_Color(hex: "#808080")
         bottomLine.layer.cornerRadius = 1
         bottomLine.clipsToBounds = true
         bottomLine.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            bottomLine.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            bottomLine.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            bottomLine.heightAnchor.constraint(equalToConstant: 2),
-            bottomLine.widthAnchor.constraint(equalToConstant: 50)
-            ])
+        if #available(iOS 9.0, *) {
+            NSLayoutConstraint.activate([
+                bottomLine.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+                bottomLine.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                bottomLine.heightAnchor.constraint(equalToConstant: 2),
+                bottomLine.widthAnchor.constraint(equalToConstant: 50)
+                ])
+        } else {
+            addConstraints([
+                NSLayoutConstraint(item: bottomLine, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: bottomLine, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: bottomLine, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 2),
+                NSLayoutConstraint(item: bottomLine, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 50)
+                ])
+        }
 
     }
 }

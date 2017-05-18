@@ -1,6 +1,6 @@
 {
   "name": "TCScreenShotTools",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "模仿摩拜单车截图分享功能",
   "homepage": "https://github.com/itanchao/TCScreenShotTools",
   "license": {
@@ -12,10 +12,10 @@
   },
   "source": {
     "git": "https://github.com/itanchao/TCScreenShotTools.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "8.0"
   },
   "source_files": "TCScreenShotTools/Classes/**/*",
   "resource_bundles": {
