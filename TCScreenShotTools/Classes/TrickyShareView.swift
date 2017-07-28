@@ -290,6 +290,23 @@ extension UIImage{
         return tc_imageNamed(name: name, inBundle: Bundle.tc_myLibraryBundle()!)
     }
     static func tc_imageNamed(name:String,inBundle:Bundle)->UIImage{
-        return UIImage(named: name, in: inBundle, compatibleWith: nil)!
+        let iconName = name.components(separatedBy: ".png").first ?? ""
+        if UIScreen.main.bounds.size.height > 1334 {
+            if let iconX3 = UIImage(named: "\(iconName)@3x.png", in: inBundle, compatibleWith: nil){
+                return iconX3
+            }
+            if let iconX2 = UIImage(named: "\(iconName)@2x.png", in: inBundle, compatibleWith: nil){
+                return iconX2
+            }
+            return UIImage(named: name, in: inBundle, compatibleWith: nil) ?? UIImage()
+        }else{
+            if let iconX2 = UIImage(named: "\(iconName)@2x.png", in: inBundle, compatibleWith: nil){
+                return iconX2
+            }
+            if let iconX = UIImage(named: name, in: inBundle, compatibleWith: nil){
+                return iconX
+            }
+            return UIImage(named: "\(iconName)@3x.png", in: inBundle, compatibleWith: nil) ?? UIImage()
+        }
     }
 }
